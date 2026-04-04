@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Please Adopt Pablo</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
 
@@ -58,7 +59,7 @@
             <h2 class="contact-heading">ADOPT PABLO</h2>
             <p class="contact-sub">FILL OUT THE FORM BELOW — WE'LL BE IN TOUCH</p>
 
-            <form id="adoptForm">
+            <form id="adoptForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                 <div class="form-group">
                     <label>YOUR NAME</label>
                     <input type="text" name="name" placeholder="FULL NAME" required>
@@ -86,7 +87,7 @@
             <div class="contact-info">
                 <p class="ci-line">PHONE — <a href="tel:8595392700">(859) 539-2700</a></p>
                 <p class="ci-line">EMAIL — <a href="mailto:Russellcampbell92@gmail.com">RUSSELLCAMPBELL92@GMAIL.COM</a></p>
-                <div class="qr-box">QR CODE<br>COMING SOON</div>
+                <div id="qrcode" class="qr-box"></div>
             </div>
 
         </div>
@@ -98,10 +99,42 @@
     </footer>
 
     <script>
-        document.getElementById('adoptForm').addEventListener('submit', function(e) {
+        // QR Code
+        new QRCode(document.getElementById("qrcode"), {
+            text: "https://69d05c29c1d67e7b307855bc--superb-paletas-9006ac.netlify.app/",
+            width: 150,
+            height: 150,
+            colorDark: "#000000",
+            colorLight: "#F47B3A",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+
+        // Form
+        document.getElementById('adoptForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            this.style.display = 'none';
-            document.getElementById('successMsg').style.display = 'block';
+            const form = this;
+            const data = new FormData(form);
+            const action = form.action;
+
+            if (action.includes('YOUR_FORM_ID')) {
+                // Formspree not connected yet — just show success
+                form.style.display = 'none';
+                document.getElementById('successMsg').style.display = 'block';
+                return;
+            }
+
+            const res = await fetch(action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (res.ok) {
+                form.style.display = 'none';
+                document.getElementById('successMsg').style.display = 'block';
+            } else {
+                alert('Something went wrong. Please email us directly at Russellcampbell92@gmail.com');
+            }
         });
     </script>
 
