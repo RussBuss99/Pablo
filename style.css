@@ -16,7 +16,8 @@ body {
 .cover {
     background: #F47B3A;
     padding: 0;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -163,7 +164,7 @@ body {
 .contact-heading {
     font-family: 'Arial Black', Arial, sans-serif;
     font-weight: 900;
-    font-size: clamp(2rem, 8vw, 5rem);
+    font-size: clamp(1.5rem, 5vw, 3.2rem);
     color: #F47B3A;
     text-align: center;
     letter-spacing: -0.02em;
