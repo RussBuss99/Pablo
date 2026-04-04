@@ -16,6 +16,10 @@ body {
 .cover {
     background: #F47B3A;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* ─── LARGE REPEATING GRID ───────────────────────────── */
@@ -164,6 +168,7 @@ body {
     text-align: center;
     letter-spacing: -0.02em;
     margin-bottom: 6px;
+    white-space: nowrap;
 }
 
 .contact-sub {
