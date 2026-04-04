@@ -328,13 +328,14 @@ body {
     .clear-row .col-l,
     .clear-row .col-r {
         font-size: 6.2vw;
+        line-height: 1.25;
     }
 
     /* No offset on mobile — keep it clean */
     .col-r-offset { padding-left: 0; }
 
     /* Smaller which-block text */
-    .wl, .wr { font-size: 3.2vw; }
+    .wl, .wr { font-size: 3.2vw; line-height: 1.4; }
 
     /* Reposition photos for portrait layout */
     .photo-a {
