@@ -15,12 +15,13 @@ body {
 /* ─── COVER ──────────────────────────────────────────── */
 .cover {
     background: #F47B3A;
-    padding: 0;
+    padding: 2.5vh 0;
     height: 100vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 /* ─── LARGE REPEATING GRID ───────────────────────────── */
@@ -39,7 +40,7 @@ body {
 
 .col-l {
     width: 62%;
-    font-size: clamp(1.5rem, 5.4vw, 5rem);
+    font-size: max(3.8vw, 5vh);
     font-weight: 900;
     color: #000;
     text-transform: uppercase;
@@ -51,7 +52,7 @@ body {
 
 .col-r {
     width: 38%;
-    font-size: clamp(1.5rem, 5.4vw, 5rem);
+    font-size: max(3.8vw, 5vh);
     font-weight: 900;
     color: #000;
     text-transform: uppercase;
@@ -112,7 +113,7 @@ body {
 
 .clear-row .col-l,
 .clear-row .col-r {
-    font-size: clamp(1.5rem, 5.4vw, 5rem);
+    font-size: max(3.8vw, 5vh);
     font-weight: 900;
     color: #000;
     text-transform: uppercase;
@@ -137,7 +138,7 @@ body {
 }
 
 .wl, .wr {
-    font-size: clamp(0.65rem, 1.7vw, 1.55rem);
+    font-size: max(1.4vw, 1.8vh);
     font-weight: 900;
     color: #000;
     text-transform: uppercase;
