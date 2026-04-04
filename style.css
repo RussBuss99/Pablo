@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #F47B3A;
+    font-family: 'Arial Black', Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    color: #000;
+    overflow-x: hidden;
+}
+
+/* ─── COVER ──────────────────────────────────────────── */
+.cover {
+    background: #F47B3A;
+    padding: 0;
+}
+
+/* ─── LARGE REPEATING GRID ───────────────────────────── */
+.grid-block {
+    position: relative;
+    padding: 10px 5% 6px;
+    line-height: 1.05;
+}
+
+.row {
+    display: flex;
+    align-items: baseline;
+    position: relative;
+    z-index: 1;
+}
+
+.col-l {
+    width: 62%;
+    font-size: clamp(1.5rem, 5.4vw, 5rem);
+    font-weight: 900;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.col-r {
+    width: 38%;
+    font-size: clamp(1.5rem, 5.4vw, 5rem);
+    font-weight: 900;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    white-space: nowrap;
+}
+
+/* Top PABLO shifted further right */
+.col-r-offset {
+    padding-left: 8%;
+}
+
+/* ─── PHOTOS (overlaid on text just like the album) ───── */
+.photo {
+    position: absolute;
+    z-index: 10;
+    background: #c8b49a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.photo span {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: rgba(0,0,0,0.35);
+    text-align: center;
+    line-height: 2;
+}
+
+/* Photo 1 — large, upper-left/center (like the family photo) */
+.photo-a {
+    top: 8%;
+    left: 6%;
+    width: 50%;
+    height: 68%;
+}
+
+/* Photo 2 — smaller, lower-right (like the second photo on album) */
+.photo-b {
+    bottom: 3%;
+    right: 6%;
+    width: 30%;
+    height: 40%;
+}
+
+/* ─── CLEAR ROW ──────────────────────────────────────── */
+.clear-row {
+    display: flex;
+    align-items: baseline;
+    padding: 8px 5% 10px;
+    background: #F47B3A;
+}
+
+.clear-row .col-l,
+.clear-row .col-r {
+    font-size: clamp(1.5rem, 5.4vw, 5rem);
+    font-weight: 900;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    white-space: nowrap;
+}
+
+.clear-row .col-l { width: 62%; overflow: hidden; }
+.clear-row .col-r { width: 38%; }
+
+/* ─── WHICH / ONE SECTION ────────────────────────────── */
+.which-block {
+    padding: 4px 5% 12px;
+    background: #F47B3A;
+}
+
+.which-row {
+    display: flex;
+    align-items: baseline;
+    line-height: 1.1;
+}
+
+.wl, .wr {
+    font-size: clamp(0.65rem, 1.7vw, 1.55rem);
+    font-weight: 900;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.wl { width: 58%; }
+.wr { width: 42%; }
+
+/* ─── CONTACT SECTION ────────────────────────────────── */
+.contact-section {
+    background: #111;
+    padding: 80px 24px;
+    color: #fff;
+}
+
+.contact-inner {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-heading {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-weight: 900;
+    font-size: clamp(2rem, 8vw, 5rem);
+    color: #F47B3A;
+    text-align: center;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+}
+
+.contact-sub {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    color: #666;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: #555;
+    margin-bottom: 7px;
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: #1c1c1c;
+    border: none;
+    border-bottom: 2px solid #F47B3A;
+    color: #fff;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    padding: 13px 10px;
+    outline: none;
+    transition: background 0.2s, border-color 0.2s;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #3a3a3a;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    background: #222;
+    border-bottom-color: #fff;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    background: #F47B3A;
+    color: #000;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    letter-spacing: -0.01em;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s;
+    margin-top: 6px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.submit-btn:hover  { background: #d96828; }
+.submit-btn:active { transform: scale(0.99); }
+
+/* ─── SUCCESS ────────────────────────────────────────── */
+.success-msg {
+    display: none;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.success-msg h3 {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #F47B3A;
+    margin-bottom: 10px;
+}
+
+.success-msg p {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: #555;
+}
+
+/* ─── CONTACT INFO ───────────────────────────────────── */
+.contact-info {
+    margin-top: 55px;
+    padding-top: 36px;
+    border-top: 1px solid #222;
+    text-align: center;
+}
+
+.ci-line {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    color: #444;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.ci-line a {
+    color: #F47B3A;
+    text-decoration: none;
+}
+
+.ci-line a:hover { color: #fff; }
+
+.qr-box {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 32px auto 0;
+    color: #3a3a3a;
+    font-family: Arial, sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-align: center;
+    line-height: 2.2;
+}
+
+/* ─── FOOTER ──────────────────────────────────────────── */
+.footer {
+    background: #000;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer p {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    color: #2a2a2a;
+    text-transform: uppercase;
+}

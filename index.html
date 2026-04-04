@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Please Adopt Pablo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ═══ ALBUM COVER SECTION ═════════════════════════════ -->
+    <section class="cover">
+
+        <!-- LARGE REPEATING GRID — "PLEASE ADOPT" left, "PABLO" right -->
+        <div class="grid-block">
+
+            <!-- Photos overlaid on top of the text (just like the album) -->
+            <div class="photo photo-a"><span>DOG<br>PHOTO</span></div>
+            <div class="photo photo-b"><span>DOG<br>PHOTO</span></div>
+
+            <!-- Repeating rows -->
+            <div class="row"><span class="col-l">PLEASE ADOPT</span><span class="col-r col-r-offset">PABLO</span></div>
+            <div class="row"><span class="col-l">PLEASE ADOPT</span><span class="col-r">PABLO</span></div>
+            <div class="row"><span class="col-l">PLEASE ADOPT</span><span class="col-r">PABLO</span></div>
+            <div class="row"><span class="col-l">PLEASE ADOPT</span><span class="col-r">PABLO</span></div>
+            <div class="row"><span class="col-l">PLEASE ADOPT</span><span class="col-r">PABLO</span></div>
+            <div class="row"><span class="col-l">PLEASE ADOPT</span><span class="col-r">PABLO</span></div>
+            <div class="row"><span class="col-l">PLEASE ADOPT</span><span class="col-r">PABLO</span></div>
+
+        </div>
+
+        <!-- CLEAR ROW — one clean line below the photos (like the album) -->
+        <div class="clear-row">
+            <span class="col-l">PLEASE ADOPT</span><span class="col-r">PABLO</span>
+        </div>
+
+        <!-- SMALL REPEATING BLOCK — like "WHICH / ONE" on the album -->
+        <div class="which-block">
+            <div class="which-row"><span class="wl">GOOD BOY / ADOPT HIM</span><span class="wr">GOOD BOY / ADOPT HIM</span></div>
+            <div class="which-row"><span class="wl">GOOD BOY / ADOPT HIM</span><span class="wr">GOOD BOY / ADOPT HIM</span></div>
+            <div class="which-row"><span class="wl">GOOD BOY / ADOPT HIM</span><span class="wr">GOOD BOY / ADOPT HIM</span></div>
+            <div class="which-row"><span class="wl">GOOD BOY / ADOPT HIM</span><span class="wr">GOOD BOY / ADOPT HIM</span></div>
+            <div class="which-row"><span class="wl">GOOD BOY / ADOPT HIM</span><span class="wr">GOOD BOY / ADOPT HIM</span></div>
+            <div class="which-row"><span class="wl">GOOD BOY / ADOPT HIM</span><span class="wr">GOOD BOY / ADOPT HIM</span></div>
+            <div class="which-row"><span class="wl">GOOD BOY / ADOPT HIM</span><span class="wr">GOOD BOY / ADOPT HIM</span></div>
+            <div class="which-row"><span class="wl">GOOD BOY / ADOPT HIM</span><span class="wr">GOOD BOY / ADOPT HIM</span></div>
+            <div class="which-row"><span class="wl">GOOD BOY / ADOPT HIM</span><span class="wr">GOOD BOY / ADOPT HIM</span></div>
+            <div class="which-row"><span class="wl">GOOD BOY / ADOPT HIM</span><span class="wr">GOOD BOY / ADOPT HIM</span></div>
+            <div class="which-row"><span class="wl">GOOD BOY / ADOPT HIM</span><span class="wr">GOOD BOY / ADOPT HIM</span></div>
+        </div>
+
+    </section>
+
+    <!-- ═══ CONTACT / ADOPT FORM ════════════════════════════ -->
+    <section class="contact-section">
+        <div class="contact-inner">
+
+            <h2 class="contact-heading">ADOPT PABLO</h2>
+            <p class="contact-sub">FILL OUT THE FORM BELOW — WE'LL BE IN TOUCH</p>
+
+            <form id="adoptForm">
+                <div class="form-group">
+                    <label>YOUR NAME</label>
+                    <input type="text" name="name" placeholder="FULL NAME" required>
+                </div>
+                <div class="form-group">
+                    <label>EMAIL ADDRESS</label>
+                    <input type="email" name="email" placeholder="YOUR@EMAIL.COM" required>
+                </div>
+                <div class="form-group">
+                    <label>PHONE NUMBER</label>
+                    <input type="tel" name="phone" placeholder="(000) 000-0000">
+                </div>
+                <div class="form-group">
+                    <label>MESSAGE</label>
+                    <textarea name="message" placeholder="TELL US ABOUT YOURSELF AND WHY YOU WANT TO ADOPT PABLO..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">SUBMIT</button>
+            </form>
+
+            <div class="success-msg" id="successMsg">
+                <h3>THANK YOU</h3>
+                <p>WE'LL BE IN TOUCH SOON ABOUT ADOPTING PABLO</p>
+            </div>
+
+            <div class="contact-info">
+                <p class="ci-line">PHONE — <a href="tel:8595392700">(859) 539-2700</a></p>
+                <p class="ci-line">EMAIL — <a href="mailto:Russellcampbell92@gmail.com">RUSSELLCAMPBELL92@GMAIL.COM</a></p>
+                <div class="qr-box">QR CODE<br>COMING SOON</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ══════════════════════════════════════════ -->
+    <footer class="footer">
+        <p>PLEASE ADOPT PABLO &nbsp;&nbsp; GIVE A DOG A HOME &nbsp;&nbsp; 2026</p>
+    </footer>
+
+    <script>
+        document.getElementById('adoptForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('successMsg').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
