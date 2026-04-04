@@ -309,6 +309,49 @@ body {
     justify-content: center;
 }
 
+/* ─── MOBILE LAYOUT ──────────────────────────────────── */
+.mob-only { display: none; }
+
+@media (max-width: 768px) {
+    /* Show mobile-only rows */
+    .mob-only { display: flex; }
+
+    /* Cover: start from top, not centered */
+    .cover {
+        justify-content: flex-start;
+        padding-top: 2vh;
+    }
+
+    /* Smaller font so text fits on narrow screen */
+    .col-l,
+    .col-r,
+    .clear-row .col-l,
+    .clear-row .col-r {
+        font-size: 6.2vw;
+    }
+
+    /* No offset on mobile — keep it clean */
+    .col-r-offset { padding-left: 0; }
+
+    /* Smaller which-block text */
+    .wl, .wr { font-size: 3.2vw; }
+
+    /* Reposition photos for portrait layout */
+    .photo-a {
+        top: 6%;
+        left: 2%;
+        width: 52%;
+        height: 32%;
+    }
+
+    .photo-b {
+        bottom: 22%;
+        right: 2%;
+        width: 38%;
+        height: 18%;
+    }
+}
+
 /* ─── FOOTER ──────────────────────────────────────────── */
 .footer {
     background: #000;
