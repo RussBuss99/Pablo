@@ -100,35 +100,48 @@
             <h2 class="contact-heading">ADOPT PABLO</h2>
             <p class="contact-sub">FILL OUT THE FORM BELOW — WE'LL BE IN TOUCH</p>
 
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="adoptForm">
+            <form id="adoptForm">
                 <div class="form-group">
                     <label>YOUR NAME</label>
-                    <input type="text" name="name" placeholder="FULL NAME" required>
+                    <input type="text" id="f-name" placeholder="FULL NAME" required>
                 </div>
                 <div class="form-group">
                     <label>EMAIL ADDRESS</label>
-                    <input type="email" name="email" placeholder="YOUR@EMAIL.COM" required>
+                    <input type="email" id="f-email" placeholder="YOUR@EMAIL.COM" required>
                 </div>
                 <div class="form-group">
                     <label>PHONE NUMBER</label>
-                    <input type="tel" name="phone" placeholder="(000) 000-0000">
+                    <input type="tel" id="f-phone" placeholder="(000) 000-0000">
                 </div>
                 <div class="form-group">
                     <label>MESSAGE</label>
-                    <textarea name="message" placeholder="TELL US A BIT ABOUT YOURSELF..."></textarea>
+                    <textarea id="f-message" placeholder="TELL US A BIT ABOUT YOURSELF..."></textarea>
                 </div>
                 <button type="submit" class="submit-btn">SUBMIT</button>
             </form>
-
-            <div class="success-msg" id="successMsg">
-                <h3>THANK YOU</h3>
-                <p>WE'LL BE IN TOUCH SOON ABOUT ADOPTING PABLO</p>
-            </div>
 
 
 
         </div>
     </section>
+
+    <script>
+        document.getElementById('adoptForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name    = document.getElementById('f-name').value;
+            const email   = document.getElementById('f-email').value;
+            const phone   = document.getElementById('f-phone').value;
+            const message = document.getElementById('f-message').value;
+            const subject = encodeURIComponent('Adoption Inquiry for Pablo');
+            const body    = encodeURIComponent(
+                'Name: ' + name + '\n' +
+                'Email: ' + email + '\n' +
+                'Phone: ' + phone + '\n\n' +
+                'Message:\n' + message
+            );
+            window.location.href = 'mailto:Russellcampbell92@gmail.com?subject=' + subject + '&body=' + body;
+        });
+    </script>
 
     <script type="module">
         import { animate, stagger } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm";
@@ -175,23 +188,6 @@
         );
     </script>
 
-    <script>
-        document.getElementById('adoptForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const form = this;
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
-            });
-            if (response.ok) {
-                form.style.display = 'none';
-                document.getElementById('successMsg').style.display = 'block';
-            } else {
-                alert('Something went wrong. Please try again.');
-            }
-        });
-    </script>
 
     <!-- ═══ FOOTER ══════════════════════════════════════════ -->
     <footer class="footer">
