@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Please Adopt Pablo</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
 
@@ -78,7 +77,6 @@
                 </a>
             </div>
 
-            <div id="qrcode" class="qr-box"></div>
 
         </div>
     </section>
@@ -88,45 +86,6 @@
         <p>PLEASE ADOPT PABLO &nbsp;&nbsp; GIVE A DOG A HOME &nbsp;&nbsp; 2026</p>
     </footer>
 
-    <script>
-        // QR Code
-        new QRCode(document.getElementById("qrcode"), {
-            text: "https://69d05c29c1d67e7b307855bc--superb-paletas-9006ac.netlify.app/",
-            width: 150,
-            height: 150,
-            colorDark: "#000000",
-            colorLight: "#F47B3A",
-            correctLevel: QRCode.CorrectLevel.H
-        });
-
-        // Form
-        document.getElementById('adoptForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const form = this;
-            const data = new FormData(form);
-            const action = form.action;
-
-            if (action.includes('YOUR_FORM_ID')) {
-                // Formspree not connected yet — just show success
-                form.style.display = 'none';
-                document.getElementById('successMsg').style.display = 'block';
-                return;
-            }
-
-            const res = await fetch(action, {
-                method: 'POST',
-                body: data,
-                headers: { 'Accept': 'application/json' }
-            });
-
-            if (res.ok) {
-                form.style.display = 'none';
-                document.getElementById('successMsg').style.display = 'block';
-            } else {
-                alert('Something went wrong. Please email us directly at Russellcampbell92@gmail.com');
-            }
-        });
-    </script>
 
 </body>
 </html>
