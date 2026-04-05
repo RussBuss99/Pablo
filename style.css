@@ -87,6 +87,14 @@ body {
     line-height: 2;
 }
 
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
 /* Photo 1 — large, upper-left/center (like the family photo) */
 .photo-a {
     top: 8%;
