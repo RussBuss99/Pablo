@@ -251,10 +251,10 @@ body {
     margin-bottom: 0 !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .story-section { padding: 48px 6%; }
     .story-inner { grid-template-columns: 1fr; gap: 32px; }
-    .story-photo img { height: 70vw; }
+    .story-photo img { height: 70vw; object-fit: cover; }
 }
 
 /* ─── CONTACT SECTION ────────────────────────────────── */
