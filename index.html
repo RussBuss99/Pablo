@@ -64,22 +64,57 @@
         <div class="contact-inner">
 
             <h2 class="contact-heading">ADOPT PABLO</h2>
-            <p class="contact-sub">REACH OUT — HE NEEDS A HOME</p>
+            <p class="contact-sub">FILL OUT THE FORM BELOW — WE'LL BE IN TOUCH</p>
 
-            <div class="contact-cards">
-                <a href="tel:8595392700" class="contact-card">
-                    <span class="card-label">CALL / TEXT</span>
-                    <span class="card-value">(859) 539-2700</span>
-                </a>
-                <a href="mailto:Russellcampbell92@gmail.com" class="contact-card">
-                    <span class="card-label">EMAIL</span>
-                    <span class="card-value">RUSSELLCAMPBELL92@GMAIL.COM</span>
-                </a>
+            <form name="adopt-pablo" method="POST" data-netlify="true" id="adoptForm">
+                <input type="hidden" name="form-name" value="adopt-pablo">
+                <div class="form-group">
+                    <label>YOUR NAME</label>
+                    <input type="text" name="name" placeholder="FULL NAME" required>
+                </div>
+                <div class="form-group">
+                    <label>EMAIL ADDRESS</label>
+                    <input type="email" name="email" placeholder="YOUR@EMAIL.COM" required>
+                </div>
+                <div class="form-group">
+                    <label>PHONE NUMBER</label>
+                    <input type="tel" name="phone" placeholder="(000) 000-0000">
+                </div>
+                <div class="form-group">
+                    <label>MESSAGE</label>
+                    <textarea name="message" placeholder="TELL US A BIT ABOUT YOURSELF..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">SUBMIT</button>
+            </form>
+
+            <div class="success-msg" id="successMsg">
+                <h3>THANK YOU</h3>
+                <p>WE'LL BE IN TOUCH SOON ABOUT ADOPTING PABLO</p>
+            </div>
+
+            <div class="contact-info">
+                <p class="ci-line">CALL / TEXT — <a href="tel:8595392700">(859) 539-2700</a></p>
+                <p class="ci-line">EMAIL — <a href="mailto:Russellcampbell92@gmail.com">RUSSELLCAMPBELL92@GMAIL.COM</a></p>
             </div>
 
 
         </div>
     </section>
+
+    <script>
+        document.getElementById('adoptForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = this;
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(new FormData(form)).toString()
+            }).then(() => {
+                form.style.display = 'none';
+                document.getElementById('successMsg').style.display = 'block';
+            }).catch(() => alert('Something went wrong. Please call or email us directly.'));
+        });
+    </script>
 
     <!-- ═══ FOOTER ══════════════════════════════════════════ -->
     <footer class="footer">
