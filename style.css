@@ -95,20 +95,20 @@ body {
     display: block;
 }
 
-/* Photo 1 — tall and narrow, covers less text */
+/* Photo 1 — tall, closer to portrait proportions */
 .photo-a {
-    top: 2%;
+    top: 0%;
     left: 6%;
-    width: 38%;
-    height: 88%;
+    width: 42%;
+    height: 96%;
 }
 
-/* Photo 2 — smaller, lower-right (like the second photo on album) */
+/* Photo 2 — smaller, lower-right */
 .photo-b {
     bottom: 2%;
     right: 6%;
     width: 30%;
-    height: 52%;
+    height: 62%;
 }
 
 /* ─── CLEAR ROW ──────────────────────────────────────── */
