@@ -91,24 +91,24 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 30%;
     display: block;
 }
 
 /* Photo 1 — large, upper-left/center (like the family photo) */
 .photo-a {
-    top: 8%;
+    top: 2%;
     left: 6%;
     width: 50%;
-    height: 68%;
+    height: 82%;
 }
 
 /* Photo 2 — smaller, lower-right (like the second photo on album) */
 .photo-b {
-    bottom: 3%;
+    bottom: 2%;
     right: 6%;
     width: 30%;
-    height: 40%;
+    height: 52%;
 }
 
 /* ─── CLEAR ROW ──────────────────────────────────────── */
@@ -385,6 +385,15 @@ body {
         width: 38%;
         height: 18%;
     }
+}
+
+/* ─── ANIMATION INITIAL STATES ──────────────────────── */
+.grid-block .row .col-l,
+.grid-block .row .col-r,
+.clear-row,
+.which-row,
+.photo {
+    opacity: 0;
 }
 
 /* ─── FOOTER ──────────────────────────────────────────── */
