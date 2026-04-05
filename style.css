@@ -99,7 +99,7 @@ body {
 .photo-a {
     top: 0%;
     left: 6%;
-    width: 32%;
+    width: 24%;
     height: 100%;
 }
 
@@ -373,25 +373,25 @@ body {
 
     /* Reposition photos for portrait layout */
     .photo-a {
-        top: 6%;
+        top: 4%;
         left: 2%;
-        width: 52%;
-        height: 32%;
+        width: 48%;
+        height: 38%;
     }
 
     .photo-b {
-        bottom: 22%;
+        bottom: 18%;
         right: 2%;
-        width: 38%;
-        height: 18%;
+        width: 34%;
+        height: 24%;
     }
 }
 
 /* ─── ANIMATION INITIAL STATES ──────────────────────── */
-.grid-block .row .col-l,
-.grid-block .row .col-r,
+.grid-block .row:not(.mob-only) .col-l,
+.grid-block .row:not(.mob-only) .col-r,
+.which-row:not(.mob-only),
 .clear-row,
-.which-row,
 .photo {
     opacity: 0;
 }
