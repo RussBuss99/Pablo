@@ -66,8 +66,7 @@
             <h2 class="contact-heading">ADOPT PABLO</h2>
             <p class="contact-sub">FILL OUT THE FORM BELOW — WE'LL BE IN TOUCH</p>
 
-            <form name="adopt-pablo" method="POST" data-netlify="true" id="adoptForm">
-                <input type="hidden" name="form-name" value="adopt-pablo">
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="adoptForm">
                 <div class="form-group">
                     <label>YOUR NAME</label>
                     <input type="text" name="name" placeholder="FULL NAME" required>
@@ -143,17 +142,20 @@
     </script>
 
     <script>
-        document.getElementById('adoptForm').addEventListener('submit', function(e) {
+        document.getElementById('adoptForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const form = this;
-            fetch('/', {
+            const response = await fetch(form.action, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(new FormData(form)).toString()
-            }).then(() => {
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            });
+            if (response.ok) {
                 form.style.display = 'none';
                 document.getElementById('successMsg').style.display = 'block';
-            }).catch(() => alert('Something went wrong. Please call or email us directly.'));
+            } else {
+                alert('Something went wrong. Please try again.');
+            }
         });
     </script>
 
